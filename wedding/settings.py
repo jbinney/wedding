@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wedding',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -100,3 +101,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EXTERNAL_ABS_PATH = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '..', 'external')
+)
+
+STATICFILES_DIRS = (
+    ('bootstrap', EXTERNAL_ABS_PATH + '/bootstrap'),
+)
