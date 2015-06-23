@@ -391,10 +391,12 @@
     "navs.less",
     "navbar.less",
     "thumbnails.less",
-    "alerts.less"
+    "alerts.less",
+    "component-animations.less"
   ],
   "js": [
-    "collapse.js"
+    "collapse.js",
+    "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=300cd40b8152a6da0a86"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=380783d4c3d3f0d74deb"
 }
