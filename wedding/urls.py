@@ -22,4 +22,7 @@ urlpatterns = [
         TemplateView.as_view(template_name='wedding/home.html'),
         name='home'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^schedule/$',
+        TemplateView.as_view(template_name='wedding/schedule.html'),
+        name='schedule'),
 ]
