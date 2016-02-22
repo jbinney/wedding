@@ -23,5 +23,6 @@ class RSVP(models.Model):
         max_length=16,
         blank=True
     )
+    is_vegetarian = models.BooleanField(default=False)
     has_significant_other = models.BooleanField(default=False)
     significant_other_name = models.CharField(max_length=128, blank=True)
