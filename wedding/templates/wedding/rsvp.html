@@ -57,74 +57,82 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="main_course_radio_group">
-          What would you like for your main course?
-          <a href="{% url 'menu' %}" target="_blank">(View Menu)</a>
-        </label>
-        <div id="main_course_radio_group">
-          {% for value, description in MAIN_COURSE_CHOICES %}
+      <div class="hidden" id="required_if_attending">
+        <div class="form-group">
+          <label for="main_course_radio_group">
+            What would you like for your main course?
+            <a href="{% url 'menu' %}" target="_blank">(View Menu)</a>
+          </label>
+          <div id="main_course_radio_group">
+            {% for value, description in MAIN_COURSE_CHOICES %}
+              <div class="radio">
+                <label>
+                  <input type="radio" name="main_course" value="{{ value }}">
+                  {{ description }}
+                </label>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="vegetarian_radio_group">Are you vegetarian?</label>
+          <div id="vegetarian_radio_group">
             <div class="radio">
               <label>
-                <input type="radio" name="main_course" value="{{ value }}">
-                {{ description }}
+                <input type="radio" name="is_vegetarian" value="True">
+                Yes
               </label>
             </div>
-          {% endfor %}
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="vegetarian_radio_group">Are you vegetarian?</label>
-        <div id="vegetarian_radio_group">
-          <div class="radio">
-            <label>
-              <input type="radio" name="is_vegetarian" value="True">
-              Yes
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="is_vegetarian" value="False">
-              No
-            </label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="is_vegetarian" value="False">
+                No
+              </label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="significant_other_radio_group">
-          Are you coming with your significant other?
-        </label>
-        <div id="significant_other_radio_group">
-          <div class="radio">
-            <label>
-              <input type="radio" name="has_significant_other" value="True">
-              Yes
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="has_significant_other" value="False">
-              No
-            </label>
+        <div class="form-group">
+          <label for="significant_other_radio_group">
+            Are you coming with your significant other?
+          </label>
+          <div id="significant_other_radio_group">
+            <div class="radio">
+              <label>
+                <input type="radio" name="has_significant_other" value="True">
+                Yes
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="has_significant_other" value="False">
+                No
+              </label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="significant_other_name_input">
-          What's your significant other's name?
-        </label>
-        <input
-          class="form-control"
-          id="significant_other_name_input"
-          name="significant_other_name"
-          type="text"
-        >
+        <div class="hidden" id="required_if_has_significant_other">
+          <div class="form-group">
+            <label for="significant_other_name_input">
+              What's your significant other's name?
+            </label>
+            <input
+              class="form-control"
+              id="significant_other_name_input"
+              name="significant_other_name"
+              type="text"
+            >
+          </div>
+        </div>
       </div>
 
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'wedding/js/rsvp.js' %}"></script>
 {% endblock %}
