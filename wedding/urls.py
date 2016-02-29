@@ -1,4 +1,4 @@
-from wedding.views import RSVPView
+from wedding.views import RSVPView, SubmitRSVPView
 
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -21,4 +21,7 @@ urlpatterns = [
     url(r'^schedule/$',
         TemplateView.as_view(template_name='wedding/schedule.html'),
         name='schedule'),
+    url(r'^submit_rsvp/$',
+        SubmitRSVPView.as_view(),
+        name='submit_rsvp'),
 ]
