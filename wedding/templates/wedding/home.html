@@ -3,11 +3,17 @@
 {% load staticfiles %}
 
 {% block content %}
-<h1>
-  Joe &amp; Bistra
-  <br>
-  Saturday May 28, 2016
-</h1>
-<br>
-<img height="640" src="{% static 'wedding/images/preview.jpg' %}" width="480">
-{% endblock %}
+  <div class="col-sm-6 col-sm-offset-3 text-center">
+    <h1>
+      Joe &amp; Bistra
+      <br>
+      Saturday May 28, 2016
+    </h1>
+
+    <br>
+
+    <img
+      class="img-responsive"
+      src="{% static 'wedding/images/preview.jpg' %}"
+    >
+  {% endblock %}
