@@ -3,9 +3,23 @@
 {% load staticfiles %}
 
 {% block content %}
-<h1>
-  Schedule
-  <br>
-  Saturday, May 29, 2016
-</h1>
+<div class="text-center">
+  <h1>Saturday May 29, 2016</h1>
+
+  <h3>4:30 - Arrive</h3>
+  <img src="{% static 'wedding/images/entrance.jpg' %}" width="500px">
+
+  <h3>5:00 - Ceremony</h3>
+  <img src="{% static 'wedding/images/ceremony.jpg' %}" width="500px">
+
+  <h3>5:30 - Cocktail hour</h3>
+  <img src="{% static 'wedding/images/garden.jpg' %}" width="500px">
+
+  <h3>6:30 - Dinner</h3>
+  <img src="{% static 'wedding/images/dinner.jpg' %}" width="500px">
+
+  <h3>7:30 - Dessert &amp; dancing</h3>
+  <img src="{% static 'wedding/images/party.jpg' %}" width="500px">
+</div>
+
 {% endblock %}
