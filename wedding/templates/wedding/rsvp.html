@@ -12,21 +12,26 @@
       {% csrf_token %}
 
       <div class="form-group {% if errors.name %}has-error{% endif %}">
-        <label class="control-label" for="name_input">What's your name?</label>
+        <label class="control-label" for="name_input">
+          What's your name?
+          {% if errors.name %}
+            {{ errors.name|first }}
+          {% endif %}
+        </label>
         <input
           class="form-control"
           id="name_input"
           name="name"
           type="text"
         >
-        {% if errors.name %}
-          <span class="help-block">{{ errors.name }}</span>
-        {% endif %}
       </div>
 
       <div class="form-group {% if errors.email %}has-error{% endif %}">
         <label class="control-label" for="email_input">
           What's your email address?
+          {% if errors.email %}
+            {{ errors.email|first }}
+          {% endif %}
         </label>
         <input
           class="form-control"
@@ -34,13 +39,12 @@
           name="email"
           type="email"
         >
-        {% if errors.email %}
-          <span class="help-block">{{ errors.email }}</span>
-        {% endif %}
       </div>
 
       <div class="form-group">
-        <label for="attending_radio_group">Will you be there?</label>
+        <label class="control-label" for="attending_radio_group">
+          Will you be there?
+        </label>
         <div id="attending_radio_group">
           <div class="radio">
             <label>
@@ -58,9 +62,12 @@
       </div>
 
       <div class="hidden" id="required_if_attending">
-        <div class="form-group">
-          <label for="main_course_radio_group">
+        <div class="form-group {% if errors.main_course %}has-error{% endif %}">
+          <label class="control-label" for="main_course_radio_group">
             What would you like for your main course?
+            {% if errors.main_course %}
+              {{ errors.main_course|first }}
+            {% endif %}
             <a href="{% url 'menu' %}" target="_blank">(View Menu)</a>
           </label>
           <div id="main_course_radio_group">
@@ -76,7 +83,9 @@
         </div>
 
         <div class="form-group">
-          <label for="vegetarian_radio_group">Are you vegetarian?</label>
+          <label class="control-label" for="vegetarian_radio_group">
+            Are you vegetarian?
+          </label>
           <div id="vegetarian_radio_group">
             <div class="radio">
               <label>
@@ -94,7 +103,7 @@
         </div>
 
         <div class="form-group">
-          <label for="significant_other_radio_group">
+          <label class="control-label" for="significant_other_radio_group">
             Are you coming with your significant other?
           </label>
           <div id="significant_other_radio_group">
@@ -114,9 +123,14 @@
         </div>
 
         <div class="hidden" id="required_if_has_significant_other">
-          <div class="form-group">
-            <label for="significant_other_name_input">
+          <div
+            class="form-group
+                   {% if errors.significant_other_name %}has-error{% endif %}">
+            <label class="control-label" for="significant_other_name_input">
               What's your significant other's name?
+              {% if errors.significant_other_name %}
+                {{ errors.significant_other_name|first }}
+              {% endif %}
             </label>
             <input
               class="form-control"
