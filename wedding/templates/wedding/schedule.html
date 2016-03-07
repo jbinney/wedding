@@ -3,23 +3,53 @@
 {% load staticfiles %}
 
 {% block content %}
-<div class="text-center">
-  <h1>Saturday May 28, 2016</h1>
+  <div class="col-sm-6 col-sm-offset-3 text-center">
+    <h1>Saturday May 28, 2016</h1>
 
-  <h3>4:30 - Arrive</h3>
-  <img src="{% static 'wedding/images/entrance.jpg' %}" width="500px">
+    <br>
+    <p class="lead">4:30pm - Arrive</p>
+    <img
+      class="img-responsive"
+      src="{% static 'wedding/images/entrance.jpg' %}"
+    >
 
-  <h3>5:00 - Ceremony</h3>
-  <img src="{% static 'wedding/images/ceremony.jpg' %}" width="500px">
+    <br>
+    <br>
 
-  <h3>5:30 - Cocktail hour</h3>
-  <img src="{% static 'wedding/images/garden.jpg' %}" width="500px">
+    <p class="lead">5:00pm - Ceremony</p>
+    <img
+      class="img-responsive"
+      src="{% static 'wedding/images/ceremony.jpg' %}"
+    >
 
-  <h3>6:30 - Dinner</h3>
-  <img src="{% static 'wedding/images/dinner.jpg' %}" width="500px">
+    <br>
+    <br>
 
-  <h3>7:30 - Dessert &amp; dancing</h3>
-  <img src="{% static 'wedding/images/party.jpg' %}" width="500px">
-</div>
+    <p class="lead">5:30pm - Cocktail hour</p>
+    <img
+      class="img-responsive"
+      src="{% static 'wedding/images/garden.jpg' %}"
+    >
 
+    <br>
+    <br>
+
+    <p class="lead">6:30pm - Dinner</p>
+    <img
+      class="img-responsive"
+      src="{% static 'wedding/images/dinner.jpg' %}"
+    >
+
+    <br>
+    <br>
+
+    <p class="lead">7:30pm - Dessert &amp; dancing</p>
+    <img
+      class="img-responsive"
+      src="{% static 'wedding/images/party.jpg' %}"
+    >
+
+    <br>
+
+  </div>
 {% endblock %}
