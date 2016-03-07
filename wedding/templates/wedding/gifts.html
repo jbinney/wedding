@@ -2,14 +2,21 @@
 
 {% load staticfiles %}
 
+{% block css %}
+  <link
+    href="{% static 'wedding/css/gifts.css' %}"
+    media="all"
+    rel="stylesheet"
+    type="text/css"
+  >
+{% endblock %}
+
 {% block content %}
-  <div
-    class="text-center lead"
-    style="position: absolute; left: 0; top: 100px; width: 100%;">
+  <div class="loading-indicator text-center lead">
     Loading...
   </div>
 
-  <div style="background: #fff; position: relative;">
+  <div class="registry-container">
     <script
       id="script_myregistry_giftlist_iframe"
       type="text/javascript"
