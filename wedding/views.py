@@ -25,12 +25,15 @@ class SubmitRSVPView(View):
             return render(
                 request,
                 'wedding/rsvp.html',
-                get_rsvp_context({'errors': form.errors})
+                get_rsvp_context({
+                    'data': form.cleaned_data,
+                    'errors': form.errors
+                })
             )
         else:
             form.save()
             return render(
                 request,
                 'wedding/rsvp_confirmation.html',
-                {'rsvp_data': form.cleaned_data}
+                {'data': form.cleaned_data}
             )

@@ -23,6 +23,7 @@
           id="name_input"
           name="name"
           type="text"
+          value="{{ data.name }}"
         >
       </div>
 
@@ -38,6 +39,7 @@
           id="email_input"
           name="email"
           type="email"
+          value="{{ data.email }}"
         >
       </div>
 
@@ -48,13 +50,23 @@
         <div id="attending_radio_group">
           <div class="radio">
             <label>
-              <input type="radio" name="attending" value="True">
+              <input
+                type="radio"
+                name="attending"
+                value="True"
+                {% if data.attending %}checked{% endif %}
+              >
               Yes &#128112;&#127830;&#127863;&#128131;&#127864;
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="attending" value="False">
+              <input
+                type="radio"
+                name="attending"
+                value="False"
+                {% if data and not data.attending %}checked{% endif %}
+              >
               No &#128575;
             </label>
           </div>
@@ -74,7 +86,12 @@
             {% for value, description in MAIN_COURSE_CHOICES %}
               <div class="radio">
                 <label>
-                  <input type="radio" name="main_course" value="{{ value }}">
+                  <input
+                    type="radio"
+                    name="main_course"
+                    value="{{ value }}"
+                    {% if data.main_course == value %}checked{% endif %}
+                  >
                   {{ description }}
                 </label>
               </div>
@@ -89,13 +106,23 @@
           <div id="vegetarian_radio_group">
             <div class="radio">
               <label>
-                <input type="radio" name="is_vegetarian" value="True">
+                <input
+                  type="radio"
+                  name="is_vegetarian"
+                  value="True"
+                  {% if data.is_vegetarian %}checked{% endif %}
+                >
                 Yes
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="is_vegetarian" value="False">
+                <input
+                  type="radio"
+                  name="is_vegetarian"
+                  value="False"
+                  {% if data and not data.is_vegetarian %}checked{% endif %}
+                >
                 No
               </label>
             </div>
@@ -109,13 +136,25 @@
           <div id="significant_other_radio_group">
             <div class="radio">
               <label>
-                <input type="radio" name="has_significant_other" value="True">
+                <input
+                  type="radio"
+                  name="has_significant_other"
+                  value="True"
+                  {% if data.has_significant_other %}checked{% endif %}
+                >
                 Yes
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="has_significant_other" value="False">
+                <input
+                  type="radio"
+                  name="has_significant_other"
+                  value="False"
+                  {% if data and not data.has_significant_other %}
+                    checked
+                  {% endif %}
+                >
                 No
               </label>
             </div>
@@ -137,6 +176,7 @@
               id="significant_other_name_input"
               name="significant_other_name"
               type="text"
+              value="{{ data.significant_other_name }}"
             >
           </div>
         </div>

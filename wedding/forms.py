@@ -27,7 +27,7 @@ class RSVPForm(ModelForm):
         self.validate_dependent_field(
             'has_significant_other',
             'significant_other_name',
-            "We need to know his/her name to seat you together."
+            "We need to know his or her name to seat you together."
         )
         return cleaned_data
 
