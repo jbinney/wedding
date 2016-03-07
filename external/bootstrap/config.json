@@ -388,17 +388,14 @@
     "forms.less",
     "buttons.less",
     "responsive-utilities.less",
-    "glyphicons.less",
     "input-groups.less",
     "navs.less",
     "navbar.less",
-    "thumbnails.less",
-    "alerts.less",
     "component-animations.less"
   ],
   "js": [
     "collapse.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=8f43ef1c2a8e062549f8"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=efbe5e5b893d8c431300"
 }
