@@ -27,6 +27,11 @@
   <link rel="icon" href="{% static 'wedding/images/favicon.ico' %}">
 
   <link
+    href="https://fonts.googleapis.com/css?family=Catamaran:500,200"
+    rel="stylesheet"
+    type="text/css"
+  >
+  <link
     href="{% static 'bootstrap/css/bootstrap.min.css' %}"
     media="all"
     rel="stylesheet"
@@ -38,12 +43,18 @@
     rel="stylesheet"
     type="text/css"
   >
+  <link
+    href="{% static 'wedding/css/base.css' %}"
+    media="all"
+    rel="stylesheet"
+    type="text/css"
+  >
   {% block css %}{% endblock %}
 </head>
   
 <body>
 
-  <nav class="navbar navbar-default navbar-static-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar_collapse" aria-expanded="false">
