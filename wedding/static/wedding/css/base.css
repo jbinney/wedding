@@ -1,3 +1,8 @@
 body {
   padding-top: 70px;
 }
+
+.portrait-image {
+  margin: 0 auto;
+  max-height: 500px;
+}
